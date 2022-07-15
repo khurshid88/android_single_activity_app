@@ -6,8 +6,8 @@
     tools:ignore="InvalidNavigation">
 
     <action
-        android:id="@+id/action_global_signFlowFragment"
-        app:destination="@id/signFlowFragment"
+        android:id="@+id/action_global_loginFlowFragment"
+        app:destination="@id/loginFlowFragment"
         app:popUpTo="@id/nav_graph" />
 
     <action
@@ -22,16 +22,9 @@
         tools:layout="@layout/flow_fragment_main" />
 
     <fragment
-        android:id="@+id/signFlowFragment"
-        android:name="com.pdp.android_saa.fragment.sign.SignFlowFragment"
-        android:label="flow_fragment_sign"
-        tools:layout="@layout/flow_fragment_sign" />
-
-    <fragment
         android:id="@+id/loginFlowFragment"
         android:name="com.pdp.android_saa.fragment.auth.LoginFlowFragment"
         android:label="flow_fragment_sign"
         tools:layout="@layout/flow_fragment_login" />
-
 
 </navigation>
