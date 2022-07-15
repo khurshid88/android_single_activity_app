@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.pdp.android_saa.R
-import com.pdp.android_saa.data.local.UserData
+import com.pdp.android_saa.manager.AuthManager
 import com.pdp.android_saa.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
         when {
-            UserData.isAuthorized -> {
+            AuthManager.isAuthorized -> {
                 navGraph.setStartDestination(R.id.mainFlowFragment)
             }
-            !UserData.isAuthorized -> {
+            !AuthManager.isAuthorized -> {
                 navGraph.setStartDestination(R.id.loginFlowFragment)
             }
         }

@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pdp.android_saa.R
-import com.pdp.android_saa.data.local.UserData
+import com.pdp.android_saa.manager.AuthManager
 import com.pdp.android_saa.databinding.FragmentLoginBinding
 import com.pdp.android_saa.extension.activityNavController
 import com.pdp.android_saa.extension.navigateSafely
@@ -21,7 +21,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private fun initViews() {
         binding.bSignin.setOnClickListener {
-            UserData.isAuthorized = true
+            AuthManager.isAuthorized = true
             activityNavController().navigateSafely(R.id.action_global_mainFlowFragment)
         }
         binding.tvSignup.setOnClickListener {
